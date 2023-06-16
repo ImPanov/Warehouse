@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody class="border-white">
-            @foreach (var item in Model.items)
+            @foreach (var item in Model.ProtItems)
             {
                 <tr>
                     <td>@item.Id</td>
@@ -27,7 +27,7 @@
                     <td>@item.Type</td>
                     <td>
                         <div class="gap-2 d-inline-block row">
-                            <a asp-page="/Edit" asp-route-itemid="@item.Id" class="btn btn-primary text-light col" role="button">Edit</a>
+                            <a asp-page="/Edit" asp-route-itemid="@item.ProtectId" class="btn btn-primary text-light col" role="button">Edit</a>
                             <a class="btn btn-primary text-light col" href="#" role="button">Delete</a>
                         </div>
                     </td>

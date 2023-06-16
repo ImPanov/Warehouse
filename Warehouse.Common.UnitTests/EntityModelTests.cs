@@ -1,3 +1,4 @@
+
 using Pckt.Shared;
 namespace Warehouse.Common.UnitTests
 {

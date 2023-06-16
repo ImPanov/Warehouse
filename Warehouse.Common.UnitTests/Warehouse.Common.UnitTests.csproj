@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Warehouse.Common.DataContext.Sqlite\Warehouse.Common.DataContext.Sqlite.csproj" />
+    <ProjectReference Include="..\Warehouse.Web\Warehouse.Web.csproj" />
   </ItemGroup>
 
 </Project>

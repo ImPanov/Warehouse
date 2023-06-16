@@ -32,4 +32,20 @@ td,th {
 .btn {
     background-color: #F46500;
     width: fit-content !important;
+    border:none !important;
+}
+label {
+    color: #F46500 !important;
+}
+input {
+    background-color: #333538 !important;
+    color: #F46500 !important;
+}
+
+.btn:hover {
+    background-color: #923d00 !important;
+}
+hr {
+    background-color: #F46500 !important;
+    opacity: 1;
 }

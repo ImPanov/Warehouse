@@ -2,3 +2,29 @@
 @model Warehouse.Web.Pages.EditModel
 @{
 }
+<h1 class="text-light">Изменение свойств</h1>
+<div class="col-md-5">
+    <form method="post">
+        <hr />
+        <div class="form-floating mb-3">
+            <input placeholder="Балка" class="form-control col" type="text" id="name" />
+            <label for="name" class="form-label text-light" >Название</label>
+        </div>
+        <div class=" form-floating mb-3">
+            <input placeholder="1000" class="form-control" type="text" id="cost" />
+            <label for="cost" class="form-label text-light" >Себестоимость</label>
+            
+        </div>
+        <div class=" form-floating mb-3">
+            <input placeholder="10" class="form-control" type="text" id="count" />
+            <label for="count" class="form-label text-light " >Количество</label>
+        </div>
+        <div class=" form-floating mb-3">
+            <input placeholder="Материал" class="form-control" type="text" id="type" />
+            <label for="type" class="form-label text-light" >Тип</label>
+        </div>
+        <div class="mb-3">
+            <button class="form-control btn btn-primary" type="submit" id="send">Save</button>
+        </div>
+    </form>
+</div>
