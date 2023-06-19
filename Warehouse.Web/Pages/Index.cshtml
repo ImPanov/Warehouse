@@ -1,11 +1,12 @@
 ﻿@page
+@using Microsoft.AspNetCore.Components.Web;
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
-<div class="">
-    <table class="table table-dark ">
+<div class="table-responsive">
+    <table class="table table-dark">
         <thead>
             <tr>
                 <th>Id</th>
@@ -28,7 +29,7 @@
                     <td>
                         <div class="gap-2 d-inline-block row">
                             <a asp-page="/Edit" asp-route-itemid="@item.ProtectId" class="btn btn-primary text-light col" role="button">Edit</a>
-                            <a class="btn btn-primary text-light col" href="#" role="button">Delete</a>
+                            <a class="btn btn-primary text-light col" asp-page="/Delete" asp-route-itemid="@item.ProtectId" role="button">Delete</a>
                         </div>
                     </td>
                 </tr>
