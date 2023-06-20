@@ -16,7 +16,7 @@ public partial class Item
 
     public long Count { get; set; }
 
-    public long Cost { get; set; }
+    public double Cost { get; set; }
 
     public string Type { get; set; } = null!;
 

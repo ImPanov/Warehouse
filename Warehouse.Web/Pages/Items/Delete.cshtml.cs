@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.DotNet.Scaffolding.Shared;
 using Pckt.Shared;
 
-namespace Warehouse.Web.Pages
+namespace Warehouse.Web.Pages.Items
 {
     public class DeleteModel : PageModel
     {

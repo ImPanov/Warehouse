@@ -1,0 +1,34 @@
+﻿@page
+@model Warehouse.Web.Pages.ExpenceItems.SendModel
+@{
+}
+<h1 class="text-light">Изменение свойств</h1>
+<div class="col-md-5">
+    <form method="post">
+        <hr />
+        <div class="form-floating mb-3">
+            <input value="@Model.SelectedItem.Name" placeholder="Балка" class="form-control col" type="text" asp-for="Input.Name" />
+            <label asp-for="Input.Name" class="form-label text-light">Название</label>
+            <span asp-validation-for="Input.Name" class="text-danger"></span>
+        </div>
+        <div class=" form-floating mb-3">
+            <input value="@Model.SelectedItem.Cost" placeholder="1000" class="form-control" type="text" asp-for="Input.Cost" />
+            <label asp-for="Input.Cost" class="form-label text-light">Стоимость</label>
+            <span asp-validation-for="Input.Cost" class="text-danger"></span>
+
+        </div>
+        <div class=" form-floating mb-3">
+            <input value="@Model.SelectedItem.Count" placeholder="10" class="form-control" type="text" asp-for="Input.Count" />
+            <label asp-for="Input.Count" class="form-label text-light ">Количество</label>
+            <span asp-validation-for="Input.Count" class="text-danger"></span>
+        </div>
+        <div class=" form-floating mb-3">
+            <input placeholder="Материал" class="form-control" type="text" asp-for="Input.Recepient" />
+            <label asp-for="Input.Recepient" class="form-label text-light">Куда</label>
+            <span asp-validation-for="Input.Recepient" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <button class="form-control btn btn-primary" type="submit" id="send">Send</button>
+        </div>
+    </form>
+</div>

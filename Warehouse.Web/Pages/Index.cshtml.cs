@@ -10,7 +10,7 @@ public class IndexModel : PageModel
     private readonly ILogger<IndexModel> _logger;
     public IDataProtector _dataProtector;
     private WarehouseContext db;
-    public List<ProtectItem>? ProtItems;
+    public List<ProtectItem>? ProtectItems;
     public IndexModel(ILogger<IndexModel> logger, WarehouseContext injectContext, IDataProtectionProvider provider)
     {
         _logger = logger;
@@ -20,7 +20,7 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-        ProtItems = db.Items.Select(c => new ProtectItem {
+        ProtectItems = db.Items.Select(c => new ProtectItem {
             ProtectId = _dataProtector.Protect(c.Id.ToString()),
             Id = (int)c.Id,
             Cost = c.Cost,
@@ -39,7 +39,7 @@ public record ProtectItem
 
     public long Count { get; set; }
 
-    public long Cost { get; set; }
+    public double Cost { get; set; }
 
     public string Type { get; set; } = null!;
 }
