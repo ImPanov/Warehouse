@@ -1,11 +1,12 @@
 
 using Pckt.Shared;
+using Warehouse.Web.Data;
 namespace Warehouse.Common.UnitTests
 {
     public class EntityModelTests
     {
         [Fact]
-        public void DatabaseConnectTest()
+        public void WarehouseDatabaseConnectTest()
         {
             using (WarehouseContext db = new())
             {
