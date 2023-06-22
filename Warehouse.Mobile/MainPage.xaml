@@ -18,21 +18,24 @@
             <Entry
                 x:Name="countItems"
                 FontSize="18"
-                
                 />
 
+            <Picker 
+                x:Name="selectItem"
+                Title="Выберите продукт" >
+                <Picker.Items>
+                </Picker.Items>
+            </Picker>
             <Label
-                Text="Hello, World!"
+                x:Name="price"
+                Text=""
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+            <Button
+                x:Name="loadItem"
+                Text="Load item"
+                Clicked="loadItem_Clicked"/>
 
             <Button
                 x:Name="CounterBtn"
