@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
 using Pckt.Shared;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Warehouse.Web.Pages.Items
 {
-
+    [Authorize]
     public class EditModel : PageModel
     {
         [BindProperty]

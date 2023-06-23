@@ -18,5 +18,6 @@ public partial class ExpenceItem
 
     public double Cost { get; set; }
 
+    public string? IsPay { get; set; }
     public string Recipient { get; set; } = null!;
 }

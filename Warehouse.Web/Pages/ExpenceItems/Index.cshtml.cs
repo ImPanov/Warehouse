@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -5,6 +6,7 @@ using Pckt.Shared;
 
 namespace Warehouse.Web.Pages.ExpenceItems
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
@@ -27,7 +29,9 @@ namespace Warehouse.Web.Pages.ExpenceItems
                 Cost = c.Cost,
                 Count = c.Count,
                 Name = c.Name,
-                Recepient = c.Recipient
+                Recepient = c.Recipient,
+                IsPay = c.IsPay,
+                
             }).ToList();
         }
     }
@@ -42,6 +46,7 @@ namespace Warehouse.Web.Pages.ExpenceItems
 
         public double Cost { get; set; }
 
+        public string? IsPay { get; set; }
         public string Recepient { get; set; } = null!;
     }
 }

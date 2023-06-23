@@ -11,6 +11,7 @@
                 <th>Cost</th>
                 <th>Count</th>
                 <th class="w-25">Type</th>
+                <th>IsPay</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -22,6 +23,7 @@
                     <td>@item.Name</td>
                     <td>@item.Cost</td>
                     <td>@item.Count</td>
+                    <td>@(item.IsPay ?? "No")</td>
                     <td>@item.Recepient</td>
                     <td>
                         <div class="gap-2 d-inline-block row">

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -7,6 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Warehouse.Web.Pages.ExpenceItems
 {
+    [Authorize]
     public class SendModel : PageModel
     {
         [BindProperty]

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.DataProtection;
 using Pckt.Shared;
 using Warehouse.Web.Data;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,7 @@ string? sqlServerConnection = builder.Configuration
 builder.Services.AddWarehouseContext(sqlServerConnection);
 builder.Services.AddRazorPages();
 builder.Services.AddDataProtection();
+
 
 
 var app = builder.Build();
@@ -41,7 +43,14 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseStatusCodePages(async context =>
+{
+    var response = context.HttpContext.Response;
 
+    if (response.StatusCode == (int)HttpStatusCode.Unauthorized ||
+            response.StatusCode == (int)HttpStatusCode.Forbidden)
+        response.Redirect("/Account/Login");
+});
 app.MapRazorPages();
 
 app.Run();

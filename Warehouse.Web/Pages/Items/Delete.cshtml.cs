@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -6,6 +7,7 @@ using Pckt.Shared;
 
 namespace Warehouse.Web.Pages.Items
 {
+    [Authorize]
     public class DeleteModel : PageModel
     {
 
