@@ -9,7 +9,7 @@ string? sqlServerConnection = builder.Configuration
 
 builder.Services.AddWarehouseContext(sqlServerConnection);
 builder.Services.AddCors();
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options => { options.JsonSerializerOptions.PropertyNamingPolicy = null; });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

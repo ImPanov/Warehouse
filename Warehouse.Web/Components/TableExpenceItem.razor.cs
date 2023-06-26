@@ -15,15 +15,16 @@ namespace Warehouse.Web.Components
         
         public TableExpenceItem()
         {
-            
         }
 
-        protected override async Task OnInitializedAsync()
+        protected override void OnInitialized()
         {
             var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase};
             _dataProtect =provider.CreateProtector("Warehouse");
-            HttpResponseMessage response = await _httpClient.GetAsync("/api/expenceitems");
-            expenceItems = (ProtectItem[])(await response.Content.ReadFromJsonAsync<ExpenceItem[]>()).Select(c => new ProtectItem
+            HttpResponseMessage response = _httpClient.GetAsync("/api/expenceitems").Result;
+            Console.WriteLine(response.Content.ReadAsStringAsync().Result);
+
+            expenceItems = response.Content.ReadFromJsonAsync<ExpenceItem[]>().Result.Select(c => new ProtectItem
             {
                 ProtectId = _dataProtect.Protect(c.Id.ToString()),
                 Id = (int)c.Id,
@@ -31,10 +32,9 @@ namespace Warehouse.Web.Components
                 Count = c.Count,
                 Name = c.Name,
                 Recepient = c.Recepient,
-                IsPay = c.IsPay,
+                IsPay = ( (c.IsPay ?? "No") == "No" ? false : true ),
 
-            });
-
+            }).ToArray();
         }
         
             
@@ -46,7 +46,7 @@ namespace Warehouse.Web.Components
         public string Name;
         public long Count;
         public double Cost;
-        public string? IsPay;
+        public bool IsPay;
         public string Recepient;
     }
 }
