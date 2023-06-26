@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Warehouse.Web", "Warehouse.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Warehouse.WebApi", "Warehouse.WebApi\Warehouse.WebApi.csproj", "{671D9949-4C6C-48A5-8A39-A43B2D629F8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warehouse.Mobile", "Warehouse.Mobile\Warehouse.Mobile.csproj", "{00249C82-F03E-4215-A961-C0AB3959273E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Warehouse.Mobile", "Warehouse.Mobile\Warehouse.Mobile.csproj", "{00249C82-F03E-4215-A961-C0AB3959273E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

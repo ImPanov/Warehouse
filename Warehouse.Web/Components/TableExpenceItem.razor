@@ -1,0 +1,39 @@
+﻿@namespace Warehouse.Web.Components
+@using Microsoft.AspNetCore.Components.Forms;
+@using Microsoft.AspNetCore.DataProtection;
+@inject IDataProtectionProvider provider
+<div class="table-responsive">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Cost</th>
+                <th>Count</th>
+                <th class="w-25">Type</th>
+                <th>IsPay</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody class="border-white">
+            @foreach (var item in expenceItems)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Cost</td>
+                    <td>@item.Count</td>
+                    <td><InputCheckbox></InputCheckbox>@(item.IsPay ?? "No")</td>
+                    <td>@item.Recepient</td>
+                    <td>
+                        <div class="gap-2 d-inline-block row">
+                            <a asp-page="/Items/Edit" asp-route-itemid="@item.ProtectId" class="btn btn-primary text-light col" role="button">Edit</a>
+                            <a class="btn btn-primary text-light col" asp-page="/ExpenceItems/SendItem" role="button">Списать</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

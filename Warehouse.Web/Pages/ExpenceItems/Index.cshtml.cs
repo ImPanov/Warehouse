@@ -29,7 +29,7 @@ namespace Warehouse.Web.Pages.ExpenceItems
                 Cost = c.Cost,
                 Count = c.Count,
                 Name = c.Name,
-                Recepient = c.Recipient,
+                Recepient = c.Recepient,
                 IsPay = c.IsPay,
                 
             }).ToList();

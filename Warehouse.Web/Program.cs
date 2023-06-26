@@ -21,8 +21,10 @@ string? sqlServerConnection = builder.Configuration
 builder.Services.AddWarehouseContext(sqlServerConnection);
 builder.Services.AddRazorPages();
 builder.Services.AddDataProtection();
-
-
+builder.Services.AddScoped(sp => new HttpClient
+{
+    BaseAddress = new Uri("https://localhost:7189")
+});
 
 var app = builder.Build();
 

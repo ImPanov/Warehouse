@@ -59,7 +59,7 @@ namespace Warehouse.Web.Pages.ExpenceItems
                 ExpenceItem.Name = Input.Name;
                 ExpenceItem.Cost = Double.Parse(Input.Cost);
                 ExpenceItem.Count = long.Parse(Input.Count);
-                ExpenceItem.Recipient = Input.Recepient;
+                ExpenceItem.Recepient = Input.Recepient;
             
                 db.ExpenceItems.Add(ExpenceItem);
                 db.SaveChanges();
