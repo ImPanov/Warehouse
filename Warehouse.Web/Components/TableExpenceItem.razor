@@ -1,5 +1,6 @@
 ﻿@namespace Warehouse.Web.Components
 @using Microsoft.AspNetCore.Components.Forms;
+@using Microsoft.AspNetCore.Components.Web;
 @using Microsoft.AspNetCore.DataProtection;
 @inject IDataProtectionProvider provider;
 <div class="table-responsive">
@@ -24,7 +25,7 @@
                     <td>@item.Cost</td>
                     <td>@item.Count</td>
                     <td>@item.Recepient</td>
-                    <td><InputCheckbox @onchange="UpdateValue" @bind-Value="@item.IsPay"></InputCheckbox></td>
+                    <td><InputCheckbox ValueExpression="@(()=>item.IsPay)" value="@item.IsPay" ValueChanged="@(e=>UpdateStatusPay(e,item))" /></td>
                     <td>
                         <div class="gap-2 d-inline-block row">
                             <a asp-page="/Items/Edit" asp-route-itemid="@item.ProtectId" class="btn btn-primary text-light col" role="button">Edit</a>

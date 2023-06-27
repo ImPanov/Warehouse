@@ -20,6 +20,7 @@ string? sqlServerConnection = builder.Configuration
 
 builder.Services.AddWarehouseContext(sqlServerConnection);
 builder.Services.AddRazorPages();
+builder.Services.AddServerSideBlazor();
 builder.Services.AddDataProtection();
 builder.Services.AddScoped(sp => new HttpClient
 {
@@ -54,5 +55,5 @@ app.UseStatusCodePages(async context =>
         response.Redirect("/Account/Login");
 });
 app.MapRazorPages();
-
+app.MapBlazorHub();
 app.Run();

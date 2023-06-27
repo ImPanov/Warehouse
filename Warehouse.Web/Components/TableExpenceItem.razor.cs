@@ -11,6 +11,8 @@ namespace Warehouse.Web.Components
         public ProtectItem[]? expenceItems { get; set; }
         [Inject]
         HttpClient _httpClient { get; set; }
+        [Inject]
+        WarehouseContext _warehouseContext { get; set; }
         IDataProtector _dataProtect { get; set; }
         
         public TableExpenceItem()
@@ -36,12 +38,17 @@ namespace Warehouse.Web.Components
 
             }).ToArray();
         }
-        
-            
+        private void UpdateStatusPay(bool value, ProtectItem protectItem)
+        {
+            _warehouseContext.ExpenceItems.Find(protectItem.Id).IsPay=(value ? "Yes" : "No");
+            _warehouseContext.SaveChanges();
+            Console.WriteLine("есттььь");
+        }
+
     }
     public record ProtectItem
     {
-        public int Id;
+        public long Id;
         public string ProtectId;
         public string Name;
         public long Count;
