@@ -42,7 +42,6 @@ namespace Warehouse.Web.Components
         {
             _warehouseContext.ExpenceItems.Find(protectItem.Id).IsPay=(value ? "Yes" : "No");
             _warehouseContext.SaveChanges();
-            Console.WriteLine("есттььь");
         }
 
     }
