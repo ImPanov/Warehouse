@@ -50,3 +50,14 @@ hr {
     background-color: #F46500 !important;
     opacity: 1;
 }
+p,h1,h2,h3,h4,h6,h5 {
+    color:white;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: #F46500 !important;
+}
+
+.nav-pills .nav-link {
+    color: white;
+}

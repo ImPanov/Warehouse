@@ -58,6 +58,8 @@ namespace Warehouse.Web.Areas.Identity.Pages.Account.Manage
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+            [Display(Name = "Username")]
+            public string Username { get; set; }
         }
 
         private async Task LoadAsync(IdentityUser user)
@@ -92,7 +94,7 @@ namespace Warehouse.Web.Areas.Identity.Pages.Account.Manage
             {
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
-
+            await _userManager.SetUserNameAsync(user, Input.Username);
             if (!ModelState.IsValid)
             {
                 await LoadAsync(user);
